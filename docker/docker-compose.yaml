@@ -1,0 +1,19 @@
+# docker --version -> Docker version 20.10.23, build 7155243
+# docker-compose --version -> docker-compose version 1.29.2, build unknown
+version: '3.8'
+services:
+  research:
+    build: .
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    shm_size: '8G'
+    stdin_open: true
+    tty: true
+    volumes:
+      - ~/.gitconfig:/root/.gitconfig:ro
+      - ~/.ssh:/root/.ssh:ro
+      - ..:/root/project
+      - ~/datasets:/root/datasets

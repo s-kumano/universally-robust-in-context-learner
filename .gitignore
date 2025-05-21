@@ -1,0 +1,9 @@
+.DS_Store
+.hypothesis/
+.ipynb_checkpoints/
+*.pyc
+__pycache__/
+/data*/
+/figs*/
+/logs*/
+data.zip
